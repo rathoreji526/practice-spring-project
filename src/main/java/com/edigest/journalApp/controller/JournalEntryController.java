@@ -19,8 +19,13 @@ public class JournalEntryController {
     }
 
     @PostMapping()
-    public boolean createEntry(@RequestBody JournalEntry myEntry){
+    public String createEntry(@RequestBody JournalEntry myEntry){
         journalEntries.put(myEntry.getId() , myEntry);
-        return true;
+        return "request submitted successfully";
+    }
+
+    @GetMapping("/id/{id}")
+    public JournalEntry getJournalEntryById(@PathVariable int id){
+        return journalEntries.get(id);
     }
 }
