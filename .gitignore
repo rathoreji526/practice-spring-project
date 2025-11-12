@@ -34,3 +34,4 @@ build/
 
 #ignore resources file to protect databse and another personal information
 src/main/resources
+src/main/resources/application.properties
